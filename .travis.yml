@@ -1,7 +1,11 @@
 language: node_js
-
 node_js:
   - 10.9.0
+
+before_install:
+  - sudo apt-add-repository ppa:qameta/allure -y
+  - sudo apt-get update -q
+  - sudo apt-get install allure -y
 
 script:
   - npm run cypress:all
