@@ -1,20 +1,7 @@
-
 language: node_js
 
 node_js:
-  - 9.5
-
-cache:
-  directories:
-    - ~/.npm
-    - ~/.cache
-
-install:
-  # use the new "ci" command for fastest installs on CI
-  - npm ci
-
-before_script:
-
+  - 10.9.0
 
 script:
   - npm run cypress:all

@@ -6,18 +6,16 @@
   "scripts": {
     "serve": "node .",
     "cypress": "cypress open",
-    "cypress:all": "cypress run --reporter mocha-allure-reporter && npm run report",
-    "report": "allure generate allure-results --clean -o allure-report && allure open allure-report"
+    "cypress:all": "cypress run --reporter mocha-allure-reporter && npm run generate_report",
+    "generate_report": "allure generate allure-results --clean -o allure-report",
+    "report": "npm run generate_report && allure open allure-report"
   },
-
   "keywords": [],
   "author": "",
   "license": "ISC",
-
   "dependencies": {
     "cypress": "^3.1.0"
   },
-
   "devDependencies": {
     "mocha": "^5.2.0",
     "mocha-allure-reporter": "^1.4.0"
