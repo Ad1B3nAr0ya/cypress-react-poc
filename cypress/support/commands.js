@@ -2,12 +2,6 @@ const selectors = require('../selectors/locators.js');
 const todosArray = require('../fixtures/todos.json');
 const mixedTodosArray = require('../fixtures/mixed_todos.json');
 
-
-Cypress.Commands.add('seedAndVisit', (seedData = 'fixture:todos') => {
-    cy.visit('/')
-
-})
-
 Cypress.Commands.add('fillTodoList', (seedData = todosArray) => {
 
     seedData.forEach(todo => {
@@ -28,14 +22,12 @@ Cypress.Commands.add('fillMixedTodoList', (seedData = mixedTodosArray) => {
             .type('{enter}')
     })
 
-    var i = 0
-    seedData.forEach(todo => {
+    seedData.forEach((todo, i) => {
         if (todo.isComplete) {
             cy
                 .get(selectors.toggleTodoSatus).eq(i)
                 .click()
         }
-        i++;
     })
 
 })

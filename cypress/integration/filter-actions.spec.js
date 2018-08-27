@@ -3,7 +3,7 @@ const selectors = require('../selectors/locators.js')
 describe('Filters & Footer Counter Validations', () => {
 
     beforeEach(() => {
-        cy.seedAndVisit()
+        cy.visit('/')
     })
 
 

@@ -3,7 +3,7 @@ const selectors = require('../selectors/locators.js');
 describe('Task List Actions & Validations', () => {
 
     beforeEach(() => {
-        cy.seedAndVisit()
+        cy.visit('/')
     })
 
     it('Accepts new task input', () => {
